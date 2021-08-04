@@ -14,6 +14,8 @@ async function getAllMerchandise() {
       SELECT * FROM merchandise;
       `)
 
+      console.log(products)
+
       return products;
 
   } catch (error) {
