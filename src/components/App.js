@@ -1,9 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
+// import {
+//   getSomething
+// } from '../api';
 
 import {
-  getSomething
-} from '../api';
+  HomePage
+} from './'
 
 const App = () => {
   // const [message, setMessage] = useState('');
@@ -18,12 +22,18 @@ const App = () => {
   //     });
   // });
 
+  const [merchandise, setMerchandise] = useState([]);
+
   return (
     <div className="App">
     <Router>
       <Route exact path="/products">
         <h1>Hello, World!</h1>
         {/* <h2>{ message }</h2> */}
+        <HomePage
+          merchandise={merchandise}
+          setMerchandise={setMerchandise}
+        />
       </Route>
     </Router>
     </div>
