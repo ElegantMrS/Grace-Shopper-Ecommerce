@@ -92,14 +92,14 @@ async function getMerchandiseById(merchId) {
 
 }
 
-async function getMerchandiseByCategory(catId) {
-  const { rows: merchandise } = await client.query(`
-          SELECT * FROM merchandise
-          WHERE cats = $1;
-      `, [catId]);
+// async function getMerchandiseByCategory(catId) {
+//   const { rows: merchandise } = await client.query(`
+//           SELECT * FROM merchandise
+//           WHERE cats = $1;
+//       `, [catId]);
 
-  return merchandise;
-}
+//   return merchandise;
+// }
 
 async function updateMerchandise(itemId, fields = {}) {
   const queryString = Object.keys(fields).map((key, index) => {

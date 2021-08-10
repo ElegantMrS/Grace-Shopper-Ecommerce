@@ -21,3 +21,15 @@ export async function getAllMerchandise() {
       throw error;
   }
 }
+
+export async function getMerchandiseByCat(category) {
+  try {
+
+    const {data} = await axios.get(`/api/products/${category}`)
+    console.log(data, 'from getMerchandiseByCat')
+    return data;
+
+  } catch (error) {
+    throw error;
+  }
+}

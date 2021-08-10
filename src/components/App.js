@@ -6,7 +6,8 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 // } from '../api';
 
 import {
-  HomePage
+  HomePage,
+  ContemporaryPage
 } from './'
 
 const App = () => {
@@ -27,10 +28,16 @@ const App = () => {
   return (
     <div className="App">
     <Router>
-      <Route exact path="/products">
+      <Route exact path="/">
         <h1>Hello, World!</h1>
         {/* <h2>{ message }</h2> */}
         <HomePage
+          merchandise={merchandise}
+          setMerchandise={setMerchandise}
+        />
+      </Route>
+      <Route exact path="/products/contemporary">
+        <ContemporaryPage
           merchandise={merchandise}
           setMerchandise={setMerchandise}
         />

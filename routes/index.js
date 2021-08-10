@@ -1,4 +1,7 @@
-const { getAllMerchandise } = require('../db');
+const { 
+  getAllMerchandise,
+  getMerchandiseByCategory
+} = require('../db');
 
 const apiRouter = require('express').Router();
 
@@ -10,17 +13,45 @@ const apiRouter = require('express').Router();
 
 /******************************************** Product Routes ********************************************/
 
-apiRouter.get("/products", async (req, res, next) => {
+apiRouter.get("/", async (req, res, next) => {
   try {
     const merch = await getAllMerchandise();
 
     console.log(merch)
 
     res.send(merch);
+                                                         
+  } catch (error) {
+
+    throw error;
+  }
+})
+
+apiRouter.get("/products", async (req, res, next) => {
+  try {
+    const merchandise = await getAllMerchandise();
+
+    console.log(merchandise)
+
+    res.send(merchandise);
 
   } catch (error) {
 
     throw error;
+  }
+})
+
+apiRouter.get('/products/contemporary', async (req, res, next) => {
+
+
+  try {
+      const category = 'Contemporary'
+      const merchandise = await getMerchandiseByCategory(category)
+
+      res.send(merchandise)
+
+  } catch (error) {
+      throw error;
   }
 })
 
