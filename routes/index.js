@@ -43,7 +43,6 @@ apiRouter.get("/products", async (req, res, next) => {
 
 apiRouter.get('/products/contemporary', async (req, res, next) => {
 
-
   try {
       const category = 'Contemporary'
       const merchandise = await getMerchandiseByCategory(category)
@@ -51,8 +50,61 @@ apiRouter.get('/products/contemporary', async (req, res, next) => {
       res.send(merchandise)
 
   } catch (error) {
-      throw error;
+    throw error;
+  }
+})
+
+apiRouter.get('/products/cubism', async (req, res, next) => {
+
+  try {
+    const category = 'Cubism'
+    const merchandise = await getMerchandiseByCategory(category)
+
+    res.send(merchandise)
+
+  } catch (error) {
+    throw error;
+  }
+})
+
+apiRouter.get('/products/impressionism', async (req, res, next) => {
+  try {
+    const category = 'Impressionism'
+    const merchandise = await getMerchandiseByCategory(category)
+
+    res.send(merchandise)
+
+  } catch (error) {
+    throw error;
+  }
+})
+
+apiRouter.get('/products/popart', async (req, res, next) => {
+
+  try {
+    const category = 'Popart'
+    const merchandise = await getMerchandiseByCategory(category)
+
+    res.send(merchandise)
+
+  } catch (error) {
+    throw error;
+  }
+})
+
+apiRouter.get('/products/PostImpressionism', async (req, res, next) => {
+  
+  try {
+    const category = 'PostImpressionism'
+    const merchandise = await getMerchandiseByCategory(category)
+
+    res.send(merchandise)
+
+  } catch (error) {
+    throw error;
   }
 })
 
 module.exports = apiRouter;
+
+

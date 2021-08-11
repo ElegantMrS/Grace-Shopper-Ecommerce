@@ -7,7 +7,11 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import {
   HomePage,
-  ContemporaryPage
+  ContemporaryPage,
+  ImpressionismPage,
+  CubismPage,
+  PopartPage,
+  PostImpressionismPage
 } from './'
 
 const App = () => {
@@ -38,6 +42,30 @@ const App = () => {
       </Route>
       <Route exact path="/products/contemporary">
         <ContemporaryPage
+          merchandise={merchandise}
+          setMerchandise={setMerchandise}
+        />
+      </Route>
+      <Route exact path="/products/cubism">
+        <CubismPage
+          merchandise={merchandise}
+          setMerchandise={setMerchandise}
+        />
+      </Route>
+      <Route exact path="/products/impressionism">
+        <ImpressionismPage
+          merchandise={merchandise}
+          setMerchandise={setMerchandise}
+        />
+      </Route>
+      <Route exact path="/products/popart">
+        <PopartPage
+          merchandise={merchandise}
+          setMerchandise={setMerchandise}
+        />
+      </Route>
+      <Route exact path="/products/post-impressionism">
+        <PostImpressionismPage
           merchandise={merchandise}
           setMerchandise={setMerchandise}
         />
