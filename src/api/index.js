@@ -33,3 +33,24 @@ export async function getMerchandiseByCat(category) {
     throw error;
   }
 }
+
+/********************************************************** user methods **********************************************************/
+
+export async function register(username, password, email) {
+  try {
+    const payload = { username: username, password: password, email: email };
+    const { data } = await axios.post(`/api/register`, payload);
+    return data;
+  } catch (error) {
+    throw error;
+  }
+}
+export async function login(username, password) {
+  try {
+    const payload = { username: username, password: password };
+    const { data } = await axios.post(`/api/login`, payload);
+    return data;
+  } catch (error) {
+    throw error;
+  }
+}

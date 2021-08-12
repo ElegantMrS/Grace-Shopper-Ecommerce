@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import {
   HomePage,
+  Header,
   ContemporaryPage,
   ImpressionismPage,
   CubismPage,
@@ -32,6 +33,7 @@ const App = () => {
   return (
     <div className="App">
     <Router>
+      <Header />
       <Route exact path="/">
         <h1>Hello, World!</h1>
         {/* <h2>{ message }</h2> */}

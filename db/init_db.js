@@ -44,13 +44,10 @@ async function buildTables() {
     console.log('Creating users...')
     await client.query(`
         CREATE TABLE users(
-            user_id SERIAL PRIMARY KEY,
+            id SERIAL PRIMARY KEY,
             username VARCHAR(255) UNIQUE NOT NULL,
             password VARCHAR(255) NOT NULL,
-            firstname VARCHAR(255) NOT NULL,
-            lastname VARCHAR(255) NOT NULL,
-            save_pmt BOOLEAN DEFAULT false,
-            active BOOLEAN DEFAULT true
+            email VARCHAR(255) UNIQUE NOT NULL
         );
     `);
 
@@ -79,7 +76,7 @@ async function buildTables() {
     await client.query(`
         CREATE TABLE IF NOT EXISTS reviews(
             review_id SERIAL PRIMARY KEY,
-            author INTEGER REFERENCES users(user_id) NOT NULL,
+            author INTEGER REFERENCES users(id) NOT NULL,
             "merchId" INTEGER REFERENCES merchandise(merch_id)NOT NULL,
             rating INTEGER,
             description TEXT NOT NULL
@@ -101,7 +98,7 @@ async function buildTables() {
             "merchId" INTEGER REFERENCES merchandise(merch_id),
             title VARCHAR(255) NOT NULL,
             "blogText" TEXT NOT NULL,
-            "authorId" INTEGER REFERENCES users(user_id)
+            "authorId" INTEGER REFERENCES users(id)
         );
     `);
 
@@ -111,7 +108,7 @@ async function buildTables() {
             wish_id SERIAL PRIMARY KEY,
             "merchId" INTEGER REFERENCES merchandise(merch_id),
             title VARCHAR(255),
-            "userId" INTEGER REFERENCES users(user_id),
+            "userId" INTEGER REFERENCES users(id),
             CONSTRAINT UC_wishlist UNIQUE ("userId", "merchId")
         );
     `);
@@ -120,7 +117,7 @@ async function buildTables() {
     await client.query(`
         CREATE TABLE IF NOT EXISTS orders(
             "orderId" SERIAL PRIMARY KEY,
-            "userId" INTEGER REFERENCES users(user_id),
+            "userId" INTEGER REFERENCES users(id),
             status BOOLEAN DEFAULT true
         );
     `);
@@ -140,7 +137,7 @@ async function buildTables() {
     await client.query(`
         CREATE TABLE IF NOT EXISTS userPreferences(
             preference_id SERIAL PRIMARY KEY,
-            "userId" INTEGER REFERENCES users(user_id),
+            "userId" INTEGER REFERENCES users(id),
             street VARCHAR(255) NOT NULL,
             city TEXT NOT NULL,
             state TEXT NOT NULL,
@@ -154,7 +151,7 @@ async function buildTables() {
     await client.query(`
         CREATE TABLE IF NOT EXISTS payments(
             payment_id SERIAL PRIMARY KEY,
-            "userId" INTEGER REFERENCES users(user_id),
+            "userId" INTEGER REFERENCES users(id),
             name VARCHAR(255) NOT NULL,
             number INTEGER UNIQUE NOT NULL,
             cardType VARCHAR(255),
