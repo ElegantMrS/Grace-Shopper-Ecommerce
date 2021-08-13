@@ -12,23 +12,20 @@ import {
   ImpressionismPage,
   CubismPage,
   PopartPage,
-  PostImpressionismPage
+  PostImpressionismPage,
+  Register,
+  // Login
 } from './'
 
 const App = () => {
-  // const [message, setMessage] = useState('');
-
-  // useEffect(() => {
-  //   getSomething()
-  //     .then(response => {
-  //       setMessage(response.message);
-  //     })
-  //     .catch(error => {
-  //       setMessage(error.message);
-  //     });
-  // });
+  
 
   const [merchandise, setMerchandise] = useState([]);
+  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [userToken, setUserToken] = useState('');
+
 
   return (
     <div className="App">
@@ -72,6 +69,29 @@ const App = () => {
           setMerchandise={setMerchandise}
         />
       </Route>
+      <Route exact path="/register">
+        <Register
+          email={email}
+          setEmail={setEmail}
+          username={username}
+          setUsername={setUsername}
+          password={password}
+          setPassword={setPassword}
+          userToken={userToken}
+          setUserToken={setUserToken}
+        />
+      </Route>
+      {/* <Route exact path="/login">
+        <Login 
+          username={username}
+          setUsername={setUsername}
+          password={password}
+          setPassword={setPassword}
+          userToken={userToken}
+          setUserToken={setUserToken}
+          // history?
+        />
+      </Route> */}
     </Router>
     </div>
   );
