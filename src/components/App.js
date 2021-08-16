@@ -14,7 +14,7 @@ import {
   PopartPage,
   PostImpressionismPage,
   Register,
-  // Login
+  Login
 } from './'
 
 const App = () => {
@@ -81,7 +81,7 @@ const App = () => {
           setUserToken={setUserToken}
         />
       </Route>
-      {/* <Route exact path="/login">
+      <Route exact path="/login">
         <Login 
           username={username}
           setUsername={setUsername}
@@ -91,7 +91,7 @@ const App = () => {
           setUserToken={setUserToken}
           // history?
         />
-      </Route> */}
+      </Route>
     </Router>
     </div>
   );

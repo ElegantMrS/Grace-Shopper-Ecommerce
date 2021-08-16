@@ -56,7 +56,7 @@ const Login = ({
                 console.log(data)
             }
 
-            history.push("/");
+            // history.push("/");
 
         } catch (error) {
             throw error;
