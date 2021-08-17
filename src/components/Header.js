@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 
-import { Link, useHisory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -21,8 +21,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ButtonAppBar() {
+export default function ButtonAppBar({ loggedIn, setLoggedIn }) {
+
   const classes = useStyles();
+  // const history = useHistory();
+
 
   return (
     <div className={classes.root}>
@@ -31,9 +34,12 @@ export default function ButtonAppBar() {
           <Typography variant="h6" className={classes.title}>
             JJRt COLLECTIONS
           </Typography>
+
+          {loggedIn ? null :
           <Link to="/login">
             <Button color="inherit">LOGIN</Button>
           </Link>
+          }
           <Link to="/register">
             <Button color="inherit">CREATE ACCOUNT</Button>
           </Link>

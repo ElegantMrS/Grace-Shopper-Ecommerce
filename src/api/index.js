@@ -53,7 +53,7 @@ export async function login(username, password) {
     const payload = { username: username, password: password };
     const { data } = await axios.post(`/api/login`, payload);
 
-    console.log(data, 'from login api')
+    // console.log(data, 'from login api')
 
     return data;
 

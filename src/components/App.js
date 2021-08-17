@@ -25,6 +25,7 @@ const App = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [userToken, setUserToken] = useState('');
+  const [loggedIn, setLoggedIn] = useState();
 
 
   return (
