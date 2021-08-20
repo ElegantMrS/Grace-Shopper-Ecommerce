@@ -5,6 +5,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 import { Link, useHistory } from 'react-router-dom';
 
@@ -29,19 +30,23 @@ export default function ButtonAppBar({ loggedIn, setLoggedIn }) {
 
   return (
     <div className={classes.root}>
-      <AppBar position="fixed">
+      <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
-            JJRt COLLECTIONS
+            JJRt
           </Typography>
 
-          {loggedIn ? null :
           <Link to="/login">
             <Button color="inherit">LOGIN</Button>
           </Link>
-          }
+          
           <Link to="/register">
             <Button color="inherit">CREATE ACCOUNT</Button>
+          </Link>
+          <Link to="/cart">
+            <Button>
+              <ShoppingCartIcon />
+            </Button>
           </Link>
         </Toolbar>
       </AppBar>

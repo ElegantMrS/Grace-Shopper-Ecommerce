@@ -33,7 +33,6 @@ useEffect(() => {
 
   return (
     <div>
-    <span><h1>Pieces for Sale</h1></span>
     <div className={classes.root}>
         <Grid container spacing={6}>
           {merchandise.map((product, index) => 
