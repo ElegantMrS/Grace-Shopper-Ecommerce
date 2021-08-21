@@ -1,3 +1,40 @@
-@import "../node_modules/@syncfusion/ej2-base/styles/material.css";
-@import "../node_modules/@syncfusion/ej2-react-navigations/styles/material.css";
+html {
+	height: 100%;
+}
 
+body {
+	margin: 0;
+	height: 100%;
+}
+
+#container {
+	height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sidebar {
+    min-width: 12%;
+    max-width: 18%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    vertical-align: top;
+    height: 100%;
+    overflow: auto;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+}
+
+#sidebar-content {
+	align-self: center;
+    justify-self: center;
+}
+
+.content-wrap {
+    margin-left: 18%;
+	display: inline-block;
+	height: 100%;
+	max-width: 60%;
+	overflow: auto;
+}

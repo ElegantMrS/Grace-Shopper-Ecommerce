@@ -32,17 +32,17 @@ useEffect(() => {
 }, []);
 
   return (
-    <div>
+    
     <div className={classes.root}>
-        <Grid container spacing={6}>
+        <Grid container spacing={2}>
           {merchandise.map((product, index) => 
           <Grid item xs={6} sm={4}>
             <ProductCard key={index} product={product}></ProductCard>
           </Grid>
           )}
         </Grid>
-    </div> 
     </div>
+
   );
 }
 
