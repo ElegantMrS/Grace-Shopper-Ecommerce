@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
-
-// import {
-//   getSomething
-// } from '../api';
+import { createTheme, ThemeProvider } from '@material-ui/core/styles';
 
 import './App.css';
 
@@ -11,6 +8,7 @@ import {
   HomePage,
   Header,
   Sidebar,
+  RightSidebar,
   ContemporaryPage,
   ImpressionismPage,
   CubismPage,
@@ -22,6 +20,36 @@ import {
   Checkout
 } from './'
 
+
+const theme = createTheme({
+  typography: {
+    fontFamily: "'Barlow', sans-serif",
+  },
+  palette: {
+    primary: {
+      light: '#df7332',
+      main: '#DF7332',
+      dark: '#1E7827',
+      contrastText: '#323232',
+    },
+    secondary: {
+      light: '#C71212',
+      main: '#155de9',
+      dark: '#0035b6',
+      contrastText: '#C7C7C7',
+    },
+    overrides: {
+        MuiCssBaseline: {
+          "@global": {
+            body: {
+              background: '#323232'
+            }
+          }
+        }
+      }
+  },
+});
+
 const App = () => {
   
 
@@ -31,6 +59,7 @@ const App = () => {
   const [password, setPassword] = useState('');
   const [userToken, setUserToken] = useState('');
   const [loggedIn, setLoggedIn] = useState();
+  const [category, setCategory] = useState('');
 
   const items = [
     { name: 'home', label: 'Home' },
@@ -41,18 +70,18 @@ const App = () => {
 
 
   return (
+    <ThemeProvider theme={theme}>
     <div className="App" id="container">
     <Router>
       <Header />
-      
       <Sidebar items={items}/>
-      
-
       <div className="content-wrap">
       <Route exact path="/">
         <HomePage
           merchandise={merchandise}
           setMerchandise={setMerchandise}
+          category={category}
+          setCategory={setCategory}
         />
       </Route>
       <Route exact path="/products/contemporary">
@@ -63,8 +92,11 @@ const App = () => {
       </Route>
       <Route exact path="/products/cubism">
         <CubismPage
+        theme={theme}
           merchandise={merchandise}
           setMerchandise={setMerchandise}
+          category={category}
+          setCategory={setCategory}
         />
       </Route>
       <Route exact path="/products/impressionism">
@@ -116,10 +148,14 @@ const App = () => {
       <Route exact path="/checkout">
         <Checkout />
       </Route>
+
       </div> 
 
+      <RightSidebar category={category}/>
+      
     </Router>
     </div>
+    </ThemeProvider>
   );
 }
 

@@ -1,10 +1,13 @@
 import { createTheme } from '@material-ui/core/styles';
 
 const theme = createTheme({
+  typography: {
+    fontFamily: 'Barlow',
+  },
   palette: {
     primary: {
-      light: '#b6ffff',
-      main: '#df7332',
+      light: '#df7332',
+      main: '#DF7332',
       dark: '#1E7827',
       contrastText: '#323232',
     },

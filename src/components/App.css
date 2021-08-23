@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@500&display=swap');
+
+
+
 html {
 	height: 100%;
 }
@@ -17,7 +21,7 @@ body {
     min-width: 12%;
     max-width: 18%;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    display: inline-block;
+    /* display: inline-block; */
     vertical-align: top;
     height: 100%;
     overflow: auto;
@@ -37,4 +41,27 @@ body {
 	height: 100%;
 	max-width: 60%;
 	overflow: auto;
+}
+
+.right-sidebar {
+    min-width: 10%;
+    max-width: 18%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    /* display: inline-block; */
+    height: 100%;
+    overflow: auto;
+    position: fixed;
+    left: 85%;
+    right: 0%;
+    display: flex;
+    /* justify-self: flex-end; */
+    justify-content: center;
+
+}
+
+#right-sidebar-content {
+	align-self: center;
+    justify-self: center;
+    transform: rotate(-90deg);
+    font-size: 50px;
 }

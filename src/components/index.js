@@ -4,6 +4,7 @@ export { default as HomePage } from './HomePage';
 export { default as Header } from './Header';
 
 export { default as Sidebar } from './Sidebar';
+export { default as RightSidebar } from './RightSidebar';
 
 export { default as ContemporaryPage } from './ContemporaryPage';
 export { default as CubismPage } from './CubismPage';

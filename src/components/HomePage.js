@@ -14,7 +14,7 @@ const useStyles = makeStyles({
   },
 });
 
-const HomePage = ({merchandise, setMerchandise}) => {
+const HomePage = ({merchandise, setMerchandise, category, setCategory}) => {
 
 const classes = useStyles();
 
@@ -24,6 +24,7 @@ useEffect(() => {
         Promise.all([getAllMerchandise()])
         .then((data) => {
             setMerchandise(data[0])
+            setCategory('Art Collections')
         });
         
     } catch (error) {
@@ -34,6 +35,7 @@ useEffect(() => {
   return (
     
     <div className={classes.root}>
+    <h2>{category}</h2>
         <Grid container spacing={2}>
           {merchandise.map((product, index) => 
           <Grid item xs={6} sm={4}>

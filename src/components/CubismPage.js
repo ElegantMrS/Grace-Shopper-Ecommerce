@@ -5,6 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import { useEffect, useState } from 'react';
 import { getMerchandiseByCat } from '../api';
 import ProductCard from './ProductCard';
+import { useTheme } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
     root: {
@@ -12,17 +13,20 @@ const useStyles = makeStyles({
       padding: 20,
     },
   });
+
   
-  const CubismPage = ({merchandise, setMerchandise}) => {
+  
+  const CubismPage = ({merchandise, setMerchandise, category, setCategory}) => {
   
   const classes = useStyles();
-  
+  const theme = useTheme();
   
   useEffect(() => {
       try {
           Promise.all([getMerchandiseByCat('Cubism')])
           .then((data) => {
             setMerchandise(data[0]);
+            setCategory('Cubism');
          }); 
       } catch (error) {
           console.log(error);
@@ -31,7 +35,7 @@ const useStyles = makeStyles({
   
     return (
       <div>
-      <span><h1>Pieces for Sale</h1></span>
+      <span><h1>{category}</h1></span>
       <div className={classes.root}>
           <Grid container spacing={6}>
             {merchandise.map((product, index) => 
