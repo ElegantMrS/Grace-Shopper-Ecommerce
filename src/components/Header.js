@@ -44,7 +44,7 @@ export default function ButtonAppBar({ loggedIn, setLoggedIn }) {
           <Link to="/register">
             <Button color="inherit">CREATE ACCOUNT</Button>
           </Link>
-          <Link to="/cart">
+          <Link to="/cart" style={{paddingRight: '15%'}}>
             <Button>
               <ShoppingCartIcon />
             </Button>

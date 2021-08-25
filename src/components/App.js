@@ -62,11 +62,12 @@ const App = () => {
   const [category, setCategory] = useState('');
 
   const items = [
-    { name: 'home', label: 'Home' },
-    { name: 'sales', label: 'Sales' },
-    { name: 'orders', label: 'Orders' },
-    { name: 'billing', label: 'Billing' },
-    { name: 'settings', label: 'Settings' }]
+    { name: 'home', label: 'HOME' },
+    { name: 'sales', label: 'CONTEMPORARY' },
+    { name: 'orders', label: 'CUBISM' },
+    { name: 'billing', label: 'IMPRESSIONISM' },
+    { name: 'settings', label: 'POPART' },
+    { name: 'extra', label: 'POST IMPRESSIONISM' }]
 
 
   return (
@@ -88,11 +89,13 @@ const App = () => {
         <ContemporaryPage
           merchandise={merchandise}
           setMerchandise={setMerchandise}
+          category={category}
+          setCategory={setCategory}
         />
       </Route>
       <Route exact path="/products/cubism">
         <CubismPage
-        theme={theme}
+
           merchandise={merchandise}
           setMerchandise={setMerchandise}
           category={category}
@@ -103,18 +106,24 @@ const App = () => {
         <ImpressionismPage
           merchandise={merchandise}
           setMerchandise={setMerchandise}
+          category={category}
+          setCategory={setCategory}
         />
       </Route>
       <Route exact path="/products/popart">
         <PopartPage
           merchandise={merchandise}
           setMerchandise={setMerchandise}
+          category={category}
+          setCategory={setCategory}
         />
       </Route>
       <Route exact path="/products/post-impressionism">
         <PostImpressionismPage
           merchandise={merchandise}
           setMerchandise={setMerchandise}
+          category={category}
+          setCategory={setCategory}
         />
       </Route>
       <Route exact path="/register">

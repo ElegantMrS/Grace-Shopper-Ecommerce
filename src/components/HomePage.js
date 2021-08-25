@@ -36,13 +36,13 @@ useEffect(() => {
     
     <div className={classes.root}>
     <h2>{category}</h2>
-        <Grid container spacing={2}>
-          {merchandise.map((product, index) => 
-          <Grid item xs={6} sm={4}>
-            <ProductCard key={index} product={product}></ProductCard>
-          </Grid>
-          )}
-        </Grid>
+      
+        {merchandise.map((product, index) => 
+        
+          <ProductCard key={index} product={product}></ProductCard>
+        
+        )}
+        
     </div>
 
   );

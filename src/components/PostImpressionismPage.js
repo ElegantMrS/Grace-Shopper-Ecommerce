@@ -13,7 +13,7 @@ const useStyles = makeStyles({
     },
   });
   
-  const PostImpressionismPage = ({merchandise, setMerchandise}) => {
+  const PostImpressionismPage = ({merchandise, setMerchandise, category, setCategory}) => {
   
   const classes = useStyles();
   
@@ -23,6 +23,7 @@ const useStyles = makeStyles({
           Promise.all([getMerchandiseByCat('PostImpressionism')])
           .then((data) => {
             setMerchandise(data[0]);
+            setCategory('POST-IMPRESSIONISM')
          }); 
       } catch (error) {
           console.log(error);

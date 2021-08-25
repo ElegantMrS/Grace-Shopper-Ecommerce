@@ -13,7 +13,7 @@ const useStyles = makeStyles({
     },
   });
   
-  const PopartPage = ({merchandise, setMerchandise}) => {
+  const PopartPage = ({merchandise, setMerchandise, category, setCategory}) => {
   
   const classes = useStyles();
   
@@ -23,6 +23,7 @@ const useStyles = makeStyles({
           Promise.all([getMerchandiseByCat('Popart')])
           .then((data) => {
             setMerchandise(data[0]);
+            setCategory('POPART')
          }); 
       } catch (error) {
           console.log(error);

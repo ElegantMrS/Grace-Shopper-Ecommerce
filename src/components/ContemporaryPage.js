@@ -13,7 +13,7 @@ const useStyles = makeStyles({
     },
   });
   
-  const ContemporaryPage = ({merchandise, setMerchandise}) => {
+  const ContemporaryPage = ({merchandise, setMerchandise, category, setCategory}) => {
   
   const classes = useStyles();
   
@@ -23,6 +23,7 @@ const useStyles = makeStyles({
           Promise.all([getMerchandiseByCat('Contemporary')])
           .then((data) => {
             setMerchandise(data[0]);
+            setCategory('CONTEMPORARY')
          }); 
       } catch (error) {
           console.log(error);

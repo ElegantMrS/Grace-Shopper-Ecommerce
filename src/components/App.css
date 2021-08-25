@@ -37,9 +37,10 @@ body {
 
 .content-wrap {
     margin-left: 18%;
+    margin-right: 16%;
 	display: inline-block;
 	height: 100%;
-	max-width: 60%;
+	width: 100%;
 	overflow: auto;
 }
 
@@ -59,9 +60,32 @@ body {
 
 }
 
+.product-box {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    height: 500px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
 #right-sidebar-content {
 	align-self: center;
     justify-self: center;
     transform: rotate(-90deg);
-    font-size: 50px;
+    font-size: 40px;
+}
+
+.product-details {
+    grid-column: 1 / 2;
+}
+
+.product-image {
+    grid-column: 2 / 3;
+    height: 50%;
+    max-width: 25%;
+}
+
+.product-image > img {
+    max-height: 60%;
 }

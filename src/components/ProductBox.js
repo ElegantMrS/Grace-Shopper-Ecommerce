@@ -1,7 +1,5 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Box from '@material-ui/core/Box';
-
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
@@ -9,10 +7,11 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core';
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: '100%',
+    maxWidth: 345,
     height: 'max-content'
   },
   media: {
@@ -47,27 +46,37 @@ const ProductCard = (props) => {
         console.log(cartItems);
     }
 
-
     return (
-        <Box component="span" m={1} className="product-box">
+        <Card className={classes.root}>
+        <CardActionArea>
+            <CardMedia
+            className={classes.media}
+            image={product.img_url}
+            title={product.name}
+            />
+            <CardContent>
+            <Typography gutterBottom constiant="h5" component="h2">
+                {product.name}
+            </Typography>
+            <Typography constiant="body2" color="textSecondary" component="p">
+                {product.artist}
+            </Typography>
             
-            <div id="product-details">
-                <Typography>
-                    {product.name}
-                </Typography>
-                <Typography>
-                    {product.artist}
-                </Typography>
-                <Typography>
-                    {product.name}
-                </Typography>
-            </div>
-            <div className="product-image">
-                <img src={product.img_url} alt={product.name}></img>
-            </div>
-        </Box>
+            </CardContent>
+        </CardActionArea>
+        <CardActions>
+            <Button type="" size="small" color="primary" onClick={() => addItemToCart(product)} >
+            Add to Collection
+            </Button>
+            <Button size="small" color="primary">
+            Learn More
+            </Button>
+            <Typography constiant="body2" color="textSecondary" component="p" >
+                {product.price}
+            </Typography>
+        </CardActions>
+        </Card>
     );
     }
-
 
 export default ProductCard;
