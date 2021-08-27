@@ -61,21 +61,13 @@ const App = () => {
   const [loggedIn, setLoggedIn] = useState();
   const [category, setCategory] = useState('');
 
-  const items = [
-    { name: 'home', label: 'HOME' },
-    { name: 'sales', label: 'CONTEMPORARY' },
-    { name: 'orders', label: 'CUBISM' },
-    { name: 'billing', label: 'IMPRESSIONISM' },
-    { name: 'settings', label: 'POPART' },
-    { name: 'extra', label: 'POST IMPRESSIONISM' }]
-
 
   return (
     <ThemeProvider theme={theme}>
     <div className="App" id="container">
     <Router>
       <Header />
-      <Sidebar items={items}/>
+      <Sidebar />
       <div className="content-wrap">
       <Route exact path="/">
         <HomePage

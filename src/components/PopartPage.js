@@ -30,20 +30,13 @@ const useStyles = makeStyles({
       }
   }, []);
   
-    return (
-      <div>
-      <span><h1>Pieces for Sale</h1></span>
-      <div className={classes.root}>
-          <Grid container spacing={6}>
-            {merchandise.map((product, index) => 
-            <Grid item xs={6} sm={4}>
-              <ProductCard key={index} product={product}></ProductCard>
-            </Grid>
-            )}
-          </Grid>
-      </div> 
-      </div>
-    );
+  return (
+    <div>
+    {merchandise.map((product, index) => 
+      <ProductCard index={index} product={product}></ProductCard>
+    )}
+    </div>
+  );
   }
   
   export default PopartPage;

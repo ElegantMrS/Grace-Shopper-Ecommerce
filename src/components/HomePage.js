@@ -24,7 +24,7 @@ useEffect(() => {
         Promise.all([getAllMerchandise()])
         .then((data) => {
             setMerchandise(data[0])
-            setCategory('Art Collections')
+            setCategory('ART COLLECTIONS')
         });
         
     } catch (error) {
@@ -32,20 +32,13 @@ useEffect(() => {
     }
 }, []);
 
-  return (
-    
-    <div className={classes.root}>
-    <h2>{category}</h2>
-      
-        {merchandise.map((product, index) => 
-        
-          <ProductCard key={index} product={product}></ProductCard>
-        
-        )}
-        
-    </div>
-
-  );
+return (
+  <div>
+  {merchandise.map((product, index) => 
+    <ProductCard index={index} product={product}></ProductCard>
+  )}
+  </div>
+)
 }
 
 export default HomePage;

@@ -8,8 +8,9 @@ const RightSidebar = ({category}) => {
 
     return (
         <div className="right-sidebar">
-            <Typography id="right-sidebar-content" component="h1">
-            {category}</Typography>
+            <Typography id="right-sidebar-content">
+            {category}
+            </Typography>
         </div>
     )
 }

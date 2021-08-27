@@ -20,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
+    letterSpacing: '0.5rem',
   },
 }));
 
@@ -33,16 +34,16 @@ export default function ButtonAppBar({ loggedIn, setLoggedIn }) {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="h3" className={classes.title}>
+          <Typography variant="h3" className={classes.title} style={{padding: '10px'}}>
             JJRt
           </Typography>
 
-          <Link to="/login">
-            <Button color="inherit">LOGIN</Button>
+          <Link to="/login" style={{textDecoration:'none'}}>
+            <Button color="inherit" style={{letterSpacing:'.2rem'}}>LOGIN</Button>
           </Link>
           
-          <Link to="/register">
-            <Button color="inherit">CREATE ACCOUNT</Button>
+          <Link to="/register" style={{textDecoration:'none'}}>
+            <Button color="inherit" style={{letterSpacing:'.2rem'}}>CREATE ACCOUNT</Button>
           </Link>
           <Link to="/cart" style={{paddingRight: '15%'}}>
             <Button>

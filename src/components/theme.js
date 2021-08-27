@@ -21,7 +21,7 @@ const theme = createTheme({
         MuiCssBaseline: {
           "@global": {
             body: {
-              background: '#323232'
+              background: 'url(/img/martin-sanchez-mIPNylNW2Ks-unsplash.jpg)'
             }
           }
         }

@@ -18,12 +18,20 @@ const useStyles = makeStyles({
   media: {
     height: 140,
   },
+  title: {
+      fontStyle: 'italic',
+      fontSize: '20px'
+      
+  },
+  actionButtons: {
+      display: 'flex',
+  }
 });
 
 
 const ProductCard = (props) => {
 
-    const { product } = props;
+    const { product, index } = props;
 
     const classes = useStyles();
 
@@ -47,26 +55,66 @@ const ProductCard = (props) => {
         console.log(cartItems);
     }
 
-
-    return (
-        <Box component="span" m={1} className="product-box">
+    if (index % 2 !== 0) {
+        return (
+            <Box component="span" className="product-box-right">
+    
             
-            <div id="product-details">
-                <Typography>
+            <div className="product-details-left">
+                <Typography  className={classes.title} style={{gridRow: 2}}>
                     {product.name}
                 </Typography>
-                <Typography>
-                    {product.artist}
+                <Typography  style={{gridRow: 3}}>
+                    {product.artist} 
                 </Typography>
-                <Typography>
-                    {product.name}
+                <Typography  style={{gridRow: 5}}>
+                    {product.price}
                 </Typography>
+                <div className={classes.actionButtons} style={{gridRow: 6}}>
+                <Button type="" size="small" color="primary" onClick={() => addItemToCart(product)} >
+                    Add to Collection
+                </Button>
+                <Button size="small" color="primary" style={{marginLeft: '30px'}}>
+                    Learn More
+                </Button>
+                </div>
             </div>
-            <div className="product-image">
+            <div className="product-image-right">
                 <img src={product.img_url} alt={product.name}></img>
             </div>
+        
         </Box>
-    );
+        )
+    } else {
+        return (
+            <Box component="span" className="product-box-left">
+            <div className="product-image-left">
+                <img src={product.img_url} alt={product.name}></img>
+            </div>
+            <div className="product-details-right">
+                <Typography className={classes.title} style={{gridRow: 2}}>
+                    {product.name}
+                </Typography>
+                <Typography style={{gridRow: 3}}>
+                    {product.artist}
+                </Typography>
+                <Typography style={{gridRow: 5}}>
+                    {product.price}
+                </Typography>
+                <div className={classes.actionButtons} style={{gridRow: 6}}>
+                <Button type="" size="small" color="primary" onClick={() => addItemToCart(product)}>
+                    Add to Collection
+                </Button>
+                <Button size="small" color="primary" style={{marginLeft: '30px'}}>
+                    Learn More
+                </Button>
+                </div>
+            </div>
+            
+        </Box>
+        )
+    }
+
     }
 
 

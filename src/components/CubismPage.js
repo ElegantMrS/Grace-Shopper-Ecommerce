@@ -5,6 +5,9 @@ import Grid from '@material-ui/core/Grid';
 import { useEffect, useState } from 'react';
 import { getMerchandiseByCat } from '../api';
 import ProductCard from './ProductCard';
+// import ProductCardRight from './ProductCard';
+// import ProductCardLeft from './ProductCardLeft';
+
 
 const useStyles = makeStyles({
     root: {
@@ -30,21 +33,27 @@ const useStyles = makeStyles({
           console.log(error);
       }
   }, []);
+
+  return (
+    <div>
+    {merchandise.map((product, index) => 
+      <ProductCard index={index} product={product}></ProductCard>
+    )}
+    </div>
+  )
   
-    return (
+  // merchandise.map((product, index) => {
+  //   if (index % 2 !== 0) {
+  //     return (
+  //       <ProductCardRight index={index} product={product}/>
+  //     )
+  //   } else {
+  //     return (
+  //       <ProductCardLeft index={index} product={product}/>
+  //     )
+  //   }
+  // })
     
-      
-      <div className="category-page">
-        
-          {merchandise.map((product, index) => 
-          
-            <ProductCard key={index} product={product}></ProductCard>
-          
-          )}
-          
-      </div> 
-      
-    );
   }
   
   export default CubismPage;

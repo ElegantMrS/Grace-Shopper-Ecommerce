@@ -1,5 +1,8 @@
 export { default as App } from './App';
+
 export { default as ProductCard } from './ProductCard';
+// export { default as ProductCardLeft } from './ProductCardLeft';
+
 export { default as HomePage } from './HomePage';
 export { default as Header } from './Header';
 
