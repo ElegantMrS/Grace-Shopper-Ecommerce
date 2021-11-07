@@ -71,11 +71,12 @@ const ProductCard = (props) => {
                     {product.price}
                 </Typography>
                 <div className={classes.actionButtons} style={{gridRow: 6}}>
-                <Button type="" size="small" color="primary" onClick={() => addItemToCart(product)} >
-                    Add to Collection
+                <Button type="" size="small" color="secondary" style={{backgroundColor: '#DF7332'}} onClick={() => addItemToCart(product)} >
+                    <Typography style={{color: 'white'}}>Add to Collection</Typography>
                 </Button>
-                <Button size="small" color="primary" style={{marginLeft: '30px'}}>
-                    Learn More
+                <Button size="small" color="primary" style={{backgroundColor: '#DF7332', marginLeft: '30px'}}>
+                {/* create onClick for this too */}
+                    <Typography style={{color: 'white'}}>Learn More</Typography>
                 </Button>
                 </div>
             </div>
@@ -102,10 +103,10 @@ const ProductCard = (props) => {
                     {product.price}
                 </Typography>
                 <div className={classes.actionButtons} style={{gridRow: 6}}>
-                <Button type="" size="small" color="primary" onClick={() => addItemToCart(product)}>
+                <Button type="" size="small" color="primary" style={{backgroundColor: '#1E7827'}} onClick={() => addItemToCart(product)}>
                     Add to Collection
                 </Button>
-                <Button size="small" color="primary" style={{marginLeft: '30px'}}>
+                <Button size="small" color="primary" style={{backgroundColor: '#1E7827', marginLeft: '30px'}}>
                     Learn More
                 </Button>
                 </div>

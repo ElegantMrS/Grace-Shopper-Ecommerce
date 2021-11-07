@@ -15,6 +15,9 @@ const useStyles = makeStyles((theme) => ({
         margin: theme.spacing(10),
         width: '25ch',
       },
+    input: {
+        padding: '10px'
+    }
     },
   }));
 
@@ -60,9 +63,12 @@ const Login = ({
                 setUsername(username)
                 setLoggedIn(true)
                 localStorage.setItem('Username', username)
+                alert("You are now signed in").then(() => {
+                    setRedirect(true);
+                })
                 
                 // setRedirect(true)
-                // history.push("/");
+                history.push("/");
 
             } else {
                 console.log(data)
@@ -75,11 +81,11 @@ const Login = ({
         }
     }
 
-        return (
+        return redirect ? (<Redirect push to="/api/"/>) : (
             <Paper className={classes.root}>
             <form className={classes.form} onSubmit={fetchApi}>
-            
-            <TextField 
+            <div className="input-field">
+            <TextField
                 variant="outlined"
                 required
                 id="username"
@@ -89,7 +95,9 @@ const Login = ({
                 value={username}
                 onChange={(event) => setUsername(event.target.value)}
             />
-            <TextField 
+            </div>
+            <div className="input-field">
+            <TextField className="input-field"
                 variant="outlined"
                 required
                 type="password"
@@ -100,10 +108,8 @@ const Login = ({
                 value={password}
                 onChange={(event) => setPassword(event.target.value)}
             />
-            
-            <Button
-            type="submit"
-            >
+            </div>
+            <Button type="submit">
                 LOGIN
             </Button>
             </form>

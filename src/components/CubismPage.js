@@ -5,6 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import { useEffect, useState } from 'react';
 import { getMerchandiseByCat } from '../api';
 import ProductCard from './ProductCard';
+import { Typography } from '@material-ui/core';
 // import ProductCardRight from './ProductCard';
 // import ProductCardLeft from './ProductCardLeft';
 
@@ -35,24 +36,18 @@ const useStyles = makeStyles({
   }, []);
 
   return (
-    <div>
-    {merchandise.map((product, index) => 
-      <ProductCard index={index} product={product}></ProductCard>
-    )}
-    </div>
+      <div id="cubism-content">
+        <div className="category-intro">
+        <Typography><p>Cubist paintings reject the inherited concept that art should copy nature, 
+          or that artists should adopt the traditional techniques of perspective, modeling, and foreshortening.</p></Typography>
+        </div>
+        {merchandise.map((product, index) => 
+          <ProductCard index={index} product={product}></ProductCard>
+        )}
+      </div>
+    
   )
   
-  // merchandise.map((product, index) => {
-  //   if (index % 2 !== 0) {
-  //     return (
-  //       <ProductCardRight index={index} product={product}/>
-  //     )
-  //   } else {
-  //     return (
-  //       <ProductCardLeft index={index} product={product}/>
-  //     )
-  //   }
-  // })
     
   }
   

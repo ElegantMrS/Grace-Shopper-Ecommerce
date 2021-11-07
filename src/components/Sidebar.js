@@ -7,7 +7,7 @@ import ListItemText from '@material-ui/core/ListItemText'
 function Sidebar() {
   return (
     <div className="sidebar">
-      <List disablePadding dense id="sidebar-content">
+      <List disablePadding dense id="sidebar-content"  >
         <ListItem>
           <Link to="/" className="menu-item">
             <ListItemText>HOME</ListItemText>

@@ -14,6 +14,9 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     width: '100%',
+    minHeight: '100px',
+    display: 'flex',
+    justifyContent: 'center',
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -21,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
     letterSpacing: '0.5rem',
+    marginLeft: '18%'
   },
 }));
 
@@ -31,18 +35,18 @@ export default function ButtonAppBar({ loggedIn, setLoggedIn }) {
 
 
   return (
-    <div className={classes.root}>
-      <AppBar position="static">
+    <div style={{width: '100%'}}>
+      <AppBar position="static" elevation={0} className={classes.root}>
         <Toolbar>
           <Typography variant="h3" className={classes.title} style={{padding: '10px'}}>
             JJRt
           </Typography>
 
-          <Link to="/login" style={{textDecoration:'none'}}>
+          <Link to="/login" style={{textDecoration: 'none'}}>
             <Button color="inherit" style={{letterSpacing:'.2rem'}}>LOGIN</Button>
           </Link>
           
-          <Link to="/register" style={{textDecoration:'none'}}>
+          <Link to="/register" style={{textDecoration: 'none'}}>
             <Button color="inherit" style={{letterSpacing:'.2rem'}}>CREATE ACCOUNT</Button>
           </Link>
           <Link to="/cart" style={{paddingRight: '15%'}}>

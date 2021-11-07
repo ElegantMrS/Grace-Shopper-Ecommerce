@@ -60,7 +60,8 @@ const Register = ({
     return (
         <Paper className={classes.root}>
         <form className={classes.form} onSubmit={confirmPassword}>
-        <TextField 
+        <div className="input-field">
+        <TextField className="input-field"
             variant="outlined"
             required
             id="email"
@@ -70,7 +71,9 @@ const Register = ({
             value={email}
             onChange={(event => setEmail(event.target.value))}
         />
-        <TextField 
+        </div>
+        <div className="input-field">
+        <TextField className="input-field"
             variant="outlined"
             required
             id="username"
@@ -80,7 +83,9 @@ const Register = ({
             value={username}
             onChange={(event) => setUsername(event.target.value)}
         />
-        <TextField 
+        </div>
+        <div className="input-field">
+        <TextField className="input-field"
             variant="outlined"
             required
             type="password"
@@ -91,7 +96,9 @@ const Register = ({
             value={password}
             onChange={(event) => setPassword(event.target.value)}
         />
-        <TextField
+        </div>
+        <div className="input-field">
+        <TextField className="input-field"
             variant="outlined"
             required
             type="password"
@@ -100,9 +107,8 @@ const Register = ({
             value={passwordConfirmation}
             onChange={(event) => setPasswordConfirmation(event.target.value)}
         />
-        <Button
-        type="submit"
-        >
+        </div>
+        <Button type="submit">
             CREATE ACCOUNT
         </Button>
         </form>

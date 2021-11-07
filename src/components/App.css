@@ -20,9 +20,14 @@ body {
     
 }
 
+.input-field {
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
 .sidebar {
-    min-width: 14%;
-    max-width: 18%;
+    min-width: 10%;
+    max-width: 15%;
     /* border: 1px solid rgba(0, 0, 0, 0.1); */
     /* display: inline-block; */
     vertical-align: top;
@@ -41,20 +46,87 @@ body {
 }
 
 .menu-item {
+    font-weight: bold;
     letter-spacing: .1rem;
     padding-bottom: 10%;
     text-decoration: none;
 }
 
 .content-wrap {
+    margin-left: 20%;
+    margin-right: 16%;
+	display: inline-block;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+
+#home-video {
+    /* width: 100vw;
+    height: 100vh; */
+    object-fit: contain;
+    /* position: fixed; */
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    /* z-index: -1; */
+}
+
+#contemporary-content {
     background-position: right top;
     background-repeat: no-repeat;
     background-size: contain;
-    
+    background-image: linear-gradient(to left, rgba(255, 255, 255, -0.0), rgba(255, 255, 255, 1.0)), 
+    url('https://wallpaper.dog/large/10707366.jpg');
+	display: inline-block;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+
+#cubism-content {
+    background-position: right top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: linear-gradient(to left, rgba(255, 255, 255, -0.0), rgba(255, 255, 255, 1.0)), 
+    url('https://wallpaper.dog/large/10707416.jpg');
+	display: inline-block;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+
+#impressionism-content {
+    background-position: right top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: linear-gradient(to left, rgba(255, 255, 255, -0.0), rgba(255, 255, 255, 1.0)), 
+    url('https://img4.goodfon.com/wallpaper/nbig/c/3c/konstantin-korovin-vid-iuzhnoi-frantsii-kartina-ulitsa-doma.jpg');
+	display: inline-block;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+
+#popart-content {
+    background-position: right top;
+    background-repeat: no-repeat;
+    background-size: contain;
     background-image: linear-gradient(to left, rgba(255, 255, 255, -0.0), rgba(255, 255, 255, 1.0)), 
     url('https://images.unsplash.com/photo-1593532847202-e818146e134a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80');
-    margin-left: 20%;
-    margin-right: 16%;
+	display: inline-block;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+
+#post-impressionism-content {
+    background-position: right top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: linear-gradient(to left, rgba(255, 255, 255, -0.0), rgba(255, 255, 255, 1.0)), 
+    url('https://wallpaperaccess.com/download/expressionist-abstract-1824874');
 	display: inline-block;
 	height: 100%;
 	width: 100%;
@@ -64,10 +136,9 @@ body {
 .right-sidebar {
     min-width: 10%;
     max-width: 18%;
-    /* border: 1px solid rgba(0, 0, 0, 0.1); */
     /* display: inline-block; */
     height: 100%;
-    overflow: auto;
+    overflow: hidden;
     position: fixed;
     left: 85%;
     right: 0%;
@@ -143,3 +214,8 @@ img {
 /* .product-image-right > img {
     max-height: 60%;
 } */
+
+.category-intro {
+    margin-top: 400px;
+    height: 300px;
+}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, useHistory } from "react-router-dom";
 import { createTheme, ThemeProvider } from '@material-ui/core/styles';
 
 import './App.css';
@@ -23,20 +23,20 @@ import {
 
 const theme = createTheme({
   typography: {
-    fontFamily: "'Barlow', sans-serif",
+    fontFamily: 'Barlow',
   },
   palette: {
     primary: {
-      light: '#df7332',
-      main: '#DF7332',
-      dark: '#1E7827',
+      light: '#c7c7c7',
+      main: '#fafafa',
+      dark: '#969696',
       contrastText: '#323232',
     },
     secondary: {
-      light: '#C71212',
-      main: '#155de9',
-      dark: '#0035b6',
-      contrastText: '#C7C7C7',
+      light: '#DF7332',
+      main: '#155DE9',
+      dark: '#1E7827',
+      contrastText: '#323232',
     },
     overrides: {
         MuiCssBaseline: {
@@ -45,14 +45,14 @@ const theme = createTheme({
               background: '#323232'
             }
           }
-        }
+        },
       }
   },
 });
 
 const App = () => {
   
-
+  const history = useHistory();
   const [merchandise, setMerchandise] = useState([]);
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');

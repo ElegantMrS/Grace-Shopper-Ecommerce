@@ -5,6 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import { useEffect, useState } from 'react';
 import { getMerchandiseByCat } from '../api';
 import ProductCard from './ProductCard';
+import { Typography } from '@material-ui/core';
 
 const useStyles = makeStyles({
     root: {
@@ -31,7 +32,11 @@ const useStyles = makeStyles({
   }, []);
   
   return (
-    <div>
+    <div id="impressionism-content">
+    <div className="category-intro">
+        <Typography><p>Cubist paintings reject the inherited concept that art should copy nature, 
+          or that artists should adopt the traditional techniques of perspective, modeling, and foreshortening.</p></Typography>
+        </div>
     {merchandise.map((product, index) => 
       <ProductCard index={index} product={product}></ProductCard>
     )}
