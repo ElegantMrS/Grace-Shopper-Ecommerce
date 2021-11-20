@@ -48,7 +48,7 @@ const removeFromCart = async (index) => {
   return (
     
     <Card className={classes.root}>
-    My Collection
+    <Typography>My Collection</Typography>
     {cartItems.map((product, index) => 
     <div key={index}>
       <CardActionArea>
