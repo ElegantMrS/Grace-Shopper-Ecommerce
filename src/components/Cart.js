@@ -32,7 +32,7 @@ const Cart = (
     cartItems = JSON.parse(localStorage.getItem('cartItems'));
 }
   
-// Write click functions for buttons - remove from cart and checkout
+// Write click functions for buttons - remove from cart (done) and checkout
 
 const removeFromCart = async (index) => {
 
@@ -70,9 +70,10 @@ const removeFromCart = async (index) => {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary" onClick={() => removeFromCart(index) }
+        <Button size="small" onClick={() => removeFromCart(index) }
         >
-          Remove From Cart
+        {/* Button works but needs to re-render page or change display (item removed from cart or something) */}
+          <Typography style={{color: '#155DE9'}}>Remove From Cart</Typography>
         </Button>
       </CardActions>
     </div>
